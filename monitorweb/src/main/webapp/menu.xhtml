@@ -1,0 +1,43 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form id="frmMenu">
+		<h:panelGrid columns="1" cellspacing="10" width="100%">
+			<h:commandLink action="marca?faces-redirect=true">
+				<h:outputText value="Marcas" />
+				<h:graphicImage value="/img/marca.png" title="Marcas" />
+			</h:commandLink>
+			<h:commandLink action="modelo?faces-redirect=true">
+				<h:outputText value="Modelos" />
+				<h:graphicImage value="/img/modelo.png" title="Modelos" />
+			</h:commandLink>
+			<p:commandLink action="automovel?faces-redirect=true">
+				<h:outputText value="Automóveis" />
+				<h:graphicImage value="/img/car.png" title="Veiculos" />
+			</p:commandLink>
+			<p:commandLink action="cliente?faces-redirect=true">
+				<h:outputText value="Clientes" />
+				<h:graphicImage value="/img/cliente.png" title="Cliente" />
+			</p:commandLink>
+			<p:commandLink action="locacao?faces-redirect=true"
+				rendered="#{facesContext.externalContext.isUserInRole('cadastro')}">
+				<h:outputText value="Alugar" />
+				<h:graphicImage
+					rendered="#{facesContext.externalContext.isUserInRole('cadastro')}"
+					value="/img/alugar.png" title="alugar" />
+			</p:commandLink>
+			<p:commandLink>
+				<h:outputText value="Pagar" />
+				<h:graphicImage value="/img/pagar.png" title="Pagar" />
+			</p:commandLink>
+			<p:commandLink action="welcome?faces-redirect=true">
+				<h:outputText value="Business" />
+				<br />
+				<h:outputText value="Intelligence" />
+				<h:graphicImage value="/img/manutencao.png" title="Manutenção" />
+			</p:commandLink>
+		</h:panelGrid>
+	</h:form>
+</ui:fragment>
